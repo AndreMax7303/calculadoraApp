@@ -7,9 +7,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: "Calculator App",
+      title: "App Calculadora",
       theme: new ThemeData.dark(),
       home: new HomePage(),
+      
     );
   }
 }

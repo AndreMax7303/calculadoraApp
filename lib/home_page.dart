@@ -1,12 +1,11 @@
+import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart'; //imported flutter material package
-
-class HomePage extends StatefulWidget{ // creating a stateful widget
+class HomePage extends StatefulWidget{
   @override
-  State createState() => new HomePageState(); // creating the state
+  State createState() => new HomePageState();
 }
 
-Widget _button (String number, Function() f){ // Creating a method of return type Widget with number and function f as a parameter
+Widget _button (String number, Function() f){
   return MaterialButton(
     height: 100.0,
     child: Text(number,
@@ -156,24 +155,24 @@ class HomePageState extends State<HomePage>{
   }
 
   @override
-  Widget build(BuildContext context) { // creating the widget
+  Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: new AppBar( //defines the content of the Appbar
-          title: new Text("Calculator"),
+        appBar: new AppBar(
+          title: new Text("Calculadora"),
         ),
         body: Container(
-          child: Column( //Since we have multiple children arranged vertically, we are using column
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Equal vertical space between all the children of column
-            children: <Widget>[ // the column widget uses the children property
-              Container( // Display Container
-                constraints: BoxConstraints.expand( // Creating a boxed container
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Container(
+                constraints: BoxConstraints.expand(
                   height: Theme.of(context).textTheme.display1.fontSize * 1.1 + 100.0,
                 ),
-                alignment: Alignment.bottomRight, // Aligning the text to the bottom right of our display screen
-                color: Colors.white, // Seting the background color of the container
+                alignment: Alignment.bottomRight,
+                color: Colors.white,
                 child: Text(
                   "$ansStr",
-                  style: TextStyle( // Styling the text
+                  style: TextStyle(
                       fontSize: 50.0,
                       color: Colors.black
                   ),
@@ -183,7 +182,7 @@ class HomePageState extends State<HomePage>{
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  _button("C", _clear), // using custom widget _button
+                  _button("C", _clear),
                   _button("0", _zero),
                   _button("=", _disp),
                   _button("/", _div)
@@ -192,7 +191,7 @@ class HomePageState extends State<HomePage>{
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  _button("7", _seven), // using custom widget _button
+                  _button("7", _seven),
                   _button("8", _eight),
                   _button("9", _nine),
                   _button("+", _sum)
@@ -201,7 +200,7 @@ class HomePageState extends State<HomePage>{
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  _button("4", _four), // using custom widget _button
+                  _button("4", _four),
                   _button("5", _five),
                   _button("6", _six),
                   _button("-", _sub)
@@ -210,7 +209,7 @@ class HomePageState extends State<HomePage>{
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  _button("1", _one), // using custom widget _button
+                  _button("1", _one),
                   _button("2", _two),
                   _button("3", _three),
                   _button("*", _mult)
